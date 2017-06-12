@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CBord.cs" />
     <Compile Include="CImageBase.cs" />
+    <Compile Include="CRamka.cs" />
     <Compile Include="CUfo.cs" />
+    <Compile Include="CWybuch.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

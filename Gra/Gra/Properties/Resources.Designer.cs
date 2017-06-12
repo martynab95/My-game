@@ -73,9 +73,9 @@ namespace Gra.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bord {
+        internal static System.Drawing.Bitmap Bord {
             get {
-                object obj = ResourceManager.GetObject("bord", resourceCulture);
+                object obj = ResourceManager.GetObject("Bord", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Gra.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cel {
+        internal static System.Drawing.Bitmap Cel {
             get {
-                object obj = ResourceManager.GetObject("cel", resourceCulture);
+                object obj = ResourceManager.GetObject("Cel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Gra.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ramka {
+        internal static System.Drawing.Bitmap Ramka {
             get {
-                object obj = ResourceManager.GetObject("ramka", resourceCulture);
+                object obj = ResourceManager.GetObject("Ramka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Gra.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wybuch {
+        internal static System.Drawing.Bitmap Wybuch {
             get {
-                object obj = ResourceManager.GetObject("wybuch", resourceCulture);
+                object obj = ResourceManager.GetObject("Wybuch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
