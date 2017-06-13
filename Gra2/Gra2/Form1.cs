@@ -17,11 +17,16 @@ namespace Gra2
         private int _row;
         private int _col;
 
-        private int _startX;
+        private int _startX;//ptk poczatkowy tablicy
         private int _startY;
 
         private int _elementSize;
         private int[,] _gameMatrix;
+
+        private int _carX; //pozycja auta w czasie
+        private int _carY;
+
+        private Random _random;
 
         #endregion
 
@@ -45,8 +50,12 @@ namespace Gra2
             _startY = 50;
             _elementSize = 15;
 
+            _carX = _carY = 0;
+
             _gameMatrix = new int[_row, _col];
             ResetGameBoard();
+
+            _random = new Random();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -106,6 +115,21 @@ namespace Gra2
         #endregion
 
         private void tmrGra_Tick(object sender, EventArgs e)
+        {
+            ResetGameBoard();
+            DrawAGra(_carX, _carY, 1);
+            Invalidate();
+
+            _carX++;
+            if( _carX == _row)
+            {
+                _carX = 0;
+                _carY = _random.Next() % 2 == 0 ? 0 : 3;
+            }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
 
         }

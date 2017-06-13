@@ -30,17 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tmrGra = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // tmrGra
             // 
+            this.tmrGra.Enabled = true;
             this.tmrGra.Tick += new System.EventHandler(this.tmrGra_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Gra2";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
@@ -51,6 +58,7 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrGra;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
