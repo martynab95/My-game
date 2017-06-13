@@ -59,10 +59,10 @@ namespace Gra2
             {
                 for(int j=0; j< _col; j++)
                 {
-                    g.DrawRectangle(new Pen(Brushes.Pink), _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
+                    g.DrawRectangle(new Pen(Brushes.BlueViolet), _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
                     if (_gameMatrix[i,j]==1)
                     {
-                        g.FillRectangle(Brushes.BlueViolet, _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
+                        g.FillRectangle(Brushes.Pink, _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
          
                     }
                     if (_gameMatrix[i, j] == 2)
@@ -85,8 +85,29 @@ namespace Gra2
         }
         private void DrawAGra(int x, int y, int value)
         {
-            _gameMatrix[0, 1] = value;
+            DrawAPoint(x, y + 1, value);
+            DrawAPoint(x+1,y+1, value);
+            DrawAPoint(x + 2, y + 1, value);
+            DrawAPoint(x +3, y + 1, value);
+            DrawAPoint(x +1, y , value);
+            DrawAPoint(x + 1, y + 2, value);
+            DrawAPoint(x + 3, y, value);
+            DrawAPoint(x + 3, y + 2, value);
+            
+        }
+
+        private void DrawAPoint(int x, int y, int value)
+        {
+            if(x < _row && x >= 0 && y< _col && y >= 0)
+            {
+                _gameMatrix[x, y] = value;
+            }
         }
         #endregion
+
+        private void tmrGra_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.tmrGra = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // tmrGra
+            // 
+            this.tmrGra.Tick += new System.EventHandler(this.tmrGra_Tick);
             // 
             // Form1
             // 
@@ -43,6 +49,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer tmrGra;
     }
 }
 
