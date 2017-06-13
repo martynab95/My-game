@@ -27,6 +27,7 @@ namespace Gra2
         private int _carY;
 
         private Random _random;
+        private int _myCarPostition;
 
         #endregion
 
@@ -56,6 +57,9 @@ namespace Gra2
             ResetGameBoard();
 
             _random = new Random();
+            _myCarPostition = 0;
+        
+            DrawAGra(  12, _myCarPostition, 2);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -76,7 +80,7 @@ namespace Gra2
                     }
                     if (_gameMatrix[i, j] == 2)
                     {
-                        g.FillRectangle(Brushes.Red, _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
+                        g.FillRectangle(Brushes.Silver, _startX + j * _elementSize, _startY + i * _elementSize, _elementSize, _elementSize);
                     }
                     }
             }
@@ -117,6 +121,7 @@ namespace Gra2
         private void tmrGra_Tick(object sender, EventArgs e)
         {
             ResetGameBoard();
+            DrawAGra(12, _myCarPostition, 2);
             DrawAGra(_carX, _carY, 1);
             Invalidate();
 
@@ -128,10 +133,23 @@ namespace Gra2
             }
 
         }
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Left && _myCarPostition==3)
+            {
+                _myCarPostition = 0;
+            }
+            else if(e.KeyCode==Keys.Right && _myCarPostition == 0)
+            {
+                _myCarPostition = 3;
+            }
         }
     }
 }

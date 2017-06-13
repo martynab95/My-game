@@ -30,17 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tmrGra = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // tmrGra
             // 
             this.tmrGra.Enabled = true;
             this.tmrGra.Tick += new System.EventHandler(this.tmrGra_Tick);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -51,6 +46,7 @@
             this.Name = "Form1";
             this.Text = "Gra2";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }
@@ -58,7 +54,6 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrGra;
-        private System.Windows.Forms.Timer timer1;
     }
 }
 
