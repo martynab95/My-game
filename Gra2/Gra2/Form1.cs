@@ -158,5 +158,12 @@ namespace Gra2
                 _myCarPostition = 3;
             }
         }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            _carX = _carY = 0;
+            _myCarPostition = 0;
+            tmrGra.Enabled = true;
+        }
     }
 }
