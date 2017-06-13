@@ -131,7 +131,14 @@ namespace Gra2
                 _carX = 0;
                 _carY = _random.Next() % 2 == 0 ? 0 : 3;
             }
-
+            CheckGame();
+        }
+        private void CheckGame()
+        {
+            if(_carX+3> 12 && _carY == _myCarPostition)
+            {
+                tmrGra.Enabled = false;
+            }
         }
         
 
