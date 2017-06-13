@@ -1,5 +1,6 @@
 ﻿#define My_Debug
 
+using Gra.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +20,21 @@ namespace Gra
         int _cursY = 0;
 #endif
         CUfo _ufo;
+        CWybuch _wybuch;
+        CBord _bord;
+        CRamka _ramka;
 
         public Form1()
         {
             InitializeComponent();
+            //zakres obszaru
+            Bitmap b = new Bitmap(Resources.Cel);
+            this.Cursor = CustomCursor.CreateCursor(b, b.Height / 2, b.Width / 2);
 
+            _ramka = new CRamka() { Left = 0, Top = 0 };
+            _bord = new CBord() { Left = 340, Top = 10 };
             _ufo = new CUfo() { Left = 10, Top = 200 };
+            _wybuch = new CWybuch() ;
         }
 
         private void timerGra_Tick(object sender, EventArgs e)
@@ -35,6 +45,10 @@ namespace Gra
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics dc = e.Graphics;
+
+            _bord.DrawImage(dc);
+            _ramka.DrawImage(dc);
+
 #if My_Debug
             TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
             Font _font = new System.Drawing.Font("Stencil", 12, FontStyle.Regular);
